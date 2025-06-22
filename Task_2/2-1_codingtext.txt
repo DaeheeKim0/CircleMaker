@@ -1,0 +1,16 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) {
+    int answer = 0;
+    int bPrice = 2000;
+    int lPrice = 12000;
+    
+    int allBPrice = (k - n/10) * bPrice;
+    int allLPrice = n * lPrice;
+    
+    answer = allLPrice + allBPrice;
+    return answer;
+}

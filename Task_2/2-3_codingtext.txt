@@ -1,0 +1,18 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int solution(vector<vector<int>> dots) {
+    auto xDots = {dots[0][0], dots[1][0], dots[2][0]};
+    auto yDots = {dots[0][1], dots[1][1], dots[2][1]};
+    
+    auto [minX, maxX] = minmax_element(xDots.begin(), xDots.end());
+    auto [minY, maxY] = minmax_element(yDots.begin(), yDots.end());
+    
+    int width = *maxX - *minX;
+    int height = *maxY - *minY;
+    
+    return width * height;
+}
